@@ -14,10 +14,12 @@ namespace Swfast.Web.Controllers
     public class ProdutoController : Controller
     {
         private readonly IProdutoController apiController;
+        private readonly ICategoriaController categoriaController;
 
-        public ProdutoController(IProdutoController apiController)
+        public ProdutoController(IProdutoController apiController, ICategoriaController categoriaController)
         {
             this.apiController = apiController;
+            this.categoriaController = categoriaController;
         }
 
         // GET: Produto
@@ -40,20 +42,22 @@ namespace Swfast.Web.Controllers
         // GET: Produto/Create
         public ActionResult Create()
         {
+            ViewBag.CategoriaId = new SelectList(categoriaController.Get(), "Id", "Nome");
+
             return View();
         }
 
         // POST: Produto/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,Preco")] Produto item)
+        public ActionResult Create([Bind(Include = "Id,Nome,Preco,CategoriaId")] Produto item)
         {
             if (ModelState.IsValid)
             {
                 apiController.Post(item);
                 return RedirectToAction("Index");
             }
-
+            ViewBag.CategoriaId = new SelectList(categoriaController.Get(), "Id", "Nome", item.CategoriaId);
             return View(item);
         }
 
@@ -65,6 +69,7 @@ namespace Swfast.Web.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.CategoriaId = new SelectList(categoriaController.Get(), "Id", "Nome", item.CategoriaId);
             return View(item);
         }
 
@@ -78,6 +83,7 @@ namespace Swfast.Web.Controllers
                 apiController.Put(id, item);
                 return RedirectToAction("Index");
             }
+            ViewBag.CategoriaId = new SelectList(categoriaController.Get(), "Id", "Nome", item.CategoriaId);
             return View(item);
         }
 

@@ -25,7 +25,7 @@ namespace Swfast.Data.Repositories
             _context.SaveChanges();
         }
 
-        public List<T> GetAll()
+        public virtual List<T> GetAll()
         {
             return _context.Set<T>().ToList();
         }

@@ -17,6 +17,9 @@ namespace Swfast.TEMP2.Models
         [Required]
         public double Preco { get; set; }
 
-        public Categoria Categoria { get; set; }
+        [Required]
+        public int CategoriaId { get; set; }
+
+        public virtual Categoria Categoria { get; set; }
     }
 }

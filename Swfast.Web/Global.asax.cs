@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Swfast.Web.Util;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -21,9 +22,10 @@ namespace Swfast.Web
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
 
-        private static void CreateSuperUser()
+        protected void Application_OnPostAuthenticateRequest(object sender, EventArgs e)
         {
-            //UserManager userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            var user = HttpContext.Current.User;
+            SimpleConfigurationPrincipal.SetAuthenticatedPrincipal(user);
         }
     }
 }

@@ -9,6 +9,6 @@ namespace Swfast.Domain.Models
         [Required]
         public string Nome { get; set; }
 
-        public List<Produto> Produtos { get; set; }
+        public virtual ICollection<Produto> Produtos { get; set; }
     }
 }

@@ -28,7 +28,7 @@ namespace Swfast.Web.Util
 
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
             services.AddTransient(typeof(ICategoriaController),typeof(CategoriaController));
-            services.AddTransient(typeof(ProdutoController));
+            services.AddTransient(typeof(IProdutoRepository),typeof(ProdutoRepository));
 
             var serviceProvider = services.BuildServiceProvider();
 

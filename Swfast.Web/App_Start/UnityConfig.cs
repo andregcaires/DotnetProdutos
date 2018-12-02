@@ -21,6 +21,7 @@ namespace Swfast.Web
             //container.RegisterType<>(typeof(IRepository<>), typeof(Repository<>));
             container.RegisterType<ICategoriaController, CategoriaController>();
             container.RegisterType<IProdutoController, ProdutoController>();
+            container.RegisterType<IProdutoRepository, ProdutoRepository>();
             container.RegisterType(typeof(IRepository<>), typeof(Repository<>));
 
             var contextOptions = new DbContextOptionsBuilder()

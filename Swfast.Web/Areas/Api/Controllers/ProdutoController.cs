@@ -13,9 +13,9 @@ namespace Swfast.Web.Areas.Api.Controllers
 {
     public class ProdutoController : ApiController, IProdutoController
     {
-        private readonly IRepository<Produto> _repo;
+        private readonly IProdutoRepository _repo;
 
-        public ProdutoController(IRepository<Produto> repo)
+        public ProdutoController(IProdutoRepository repo)
         {
             _repo = repo;
         }
