@@ -1,0 +1,16 @@
+C:\Andre\Projetos\VS\SWFast\Swfast.Domain\bin\Debug\netstandard2.0\Swfast.Domain.deps.json
+C:\Andre\Projetos\VS\SWFast\Swfast.Domain\bin\Debug\netstandard2.0\Swfast.Domain.dll
+C:\Andre\Projetos\VS\SWFast\Swfast.Domain\bin\Debug\netstandard2.0\Swfast.Domain.pdb
+C:\Andre\Projetos\VS\SWFast\Swfast.Domain\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Andre\Projetos\VS\SWFast\Swfast.Domain\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Andre\Projetos\VS\SWFast\Swfast.Domain\bin\Debug\netstandard2.0\System.Security.dll
+C:\Andre\Projetos\VS\SWFast\Swfast.Domain\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.xml
+C:\Andre\Projetos\VS\SWFast\Swfast.Domain\bin\Debug\netstandard2.0\System.Configuration.xml
+C:\Andre\Projetos\VS\SWFast\Swfast.Domain\bin\Debug\netstandard2.0\System.Security.xml
+C:\Andre\Projetos\VS\SWFast\Swfast.Domain\obj\Debug\netstandard2.0\Swfast.Domain.csprojAssemblyReference.cache
+C:\Andre\Projetos\VS\SWFast\Swfast.Domain\obj\Debug\netstandard2.0\Swfast.Domain.csproj.CoreCompileInputs.cache
+C:\Andre\Projetos\VS\SWFast\Swfast.Domain\obj\Debug\netstandard2.0\Swfast.Domain.AssemblyInfoInputs.cache
+C:\Andre\Projetos\VS\SWFast\Swfast.Domain\obj\Debug\netstandard2.0\Swfast.Domain.AssemblyInfo.cs
+C:\Andre\Projetos\VS\SWFast\Swfast.Domain\obj\Debug\netstandard2.0\Swfast.Domain.csproj.CopyComplete
+C:\Andre\Projetos\VS\SWFast\Swfast.Domain\obj\Debug\netstandard2.0\Swfast.Domain.dll
+C:\Andre\Projetos\VS\SWFast\Swfast.Domain\obj\Debug\netstandard2.0\Swfast.Domain.pdb
