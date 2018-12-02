@@ -12,11 +12,12 @@ namespace Swfast.Web.Areas.Api.Interfaces
     {
         IEnumerable<Categoria> Get();
 
-        IHttpActionResult Get(int id);
+        Categoria Get(int id);
 
         IHttpActionResult Post(Categoria item);
 
-        IHttpActionResult PutCategoria(int id, Categoria categoria);
+        //IHttpActionResult PutCategoria(int id, Categoria categoria);
+        IHttpActionResult Put(int id, Categoria categoria);
 
         IHttpActionResult Delete(int id);
 

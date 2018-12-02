@@ -1,15 +1,17 @@
 ﻿using Swfast.Data.Repositories;
 using Swfast.Domain.Models;
+using Swfast.Web.Areas.Api.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace Swfast.Web.Areas.Api.Controllers
 {
-    public class ProdutoController : ApiController
+    public class ProdutoController : ApiController, IProdutoController
     {
         private readonly IRepository<Produto> _repo;
 
@@ -18,43 +20,77 @@ namespace Swfast.Web.Areas.Api.Controllers
             _repo = repo;
         }
 
-
-        // GET api/<controller>
+        // GET: api/Produto
         public IEnumerable<Produto> Get()
         {
             return _repo.GetAll();
         }
 
-        // GET api/<controller>/5
+        // GET: api/Produto/5
+        [ResponseType(typeof(Produto))]
         public Produto Get(int id)
         {
-
-            Produto produto = _repo.GetById(id);
-
-            if (produto == null)
+            Produto item = _repo.GetById(id);
+            if (item == null)
             {
-                return null;
+                return null;// NotFound();
             }
 
-            return produto;
-        }
-    
-
-        // POST api/<controller>
-        [HttpPost]
-        public void Post([FromBody]Produto item)
-        {
-            //if(Model)
+            return item; // Ok(item);
         }
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]Produto item)
+        // POST: api/Produto
+        [ResponseType(typeof(Produto))]
+        public IHttpActionResult Post(Produto item)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            _repo.Insert(item);
+
+            return CreatedAtRoute("Post", new { id = item.Id }, item);
         }
 
-        // DELETE api/<controller>/5
-        public void Delete(int id)
+        // PUT: api/Produto/5
+        [ResponseType(typeof(IHttpActionResult))]
+        public IHttpActionResult Put(int id, Produto item)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (id != item.Id)
+            {
+                return BadRequest();
+            }
+
+            _repo.Update(item);
+
+
+            if (_repo.GetById(id) == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(item);
+        }
+
+        // DELETE: api/Produto/5
+        [ResponseType(typeof(Produto))]
+        public IHttpActionResult Delete(int id)
+        {
+            Produto item = _repo.GetById(id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+
+            _repo.Delete(item);
+
+            return Ok(item);
         }
     }
 }

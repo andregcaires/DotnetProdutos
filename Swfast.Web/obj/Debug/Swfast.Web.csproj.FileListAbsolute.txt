@@ -268,3 +268,4 @@ C:\Andre\Projetos\VS\SWFast\Swfast.Web\obj\Debug\Swfast.Web.csproj.CoreCompileIn
 C:\Andre\Projetos\VS\SWFast\Swfast.Web\obj\Debug\Swfast.Web.csproj.CopyComplete
 C:\Andre\Projetos\VS\SWFast\Swfast.Web\obj\Debug\Swfast.Web.dll
 C:\Andre\Projetos\VS\SWFast\Swfast.Web\obj\Debug\Swfast.Web.pdb
+C:\Andre\Projetos\VS\SWFast\Swfast.Web\bin\Unity.Mvc5.dll

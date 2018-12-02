@@ -11,6 +11,7 @@ using Swfast.Web.Areas.Api.Interfaces;
 
 namespace Swfast.Web.Controllers
 {
+    [Authorize(Users ="")]
     public class CategoriaController : Controller
     {
         private readonly ICategoriaController apiController;
@@ -21,6 +22,7 @@ namespace Swfast.Web.Controllers
         }
 
         // GET: Categoria
+        [AllowAnonymous]
         public ActionResult Index()
         {
             //return View(new Areas.Api.Controllers.CategoriaController().Get());
@@ -71,11 +73,11 @@ namespace Swfast.Web.Controllers
         // POST: Categoria/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome")] Categoria item)
+        public ActionResult Edit([Bind(Include = "Id,Nome")] int id, Categoria item)
         {
             if (ModelState.IsValid)
             {
-                apiController.Post(item);
+                apiController.Put(id, item);
                 return RedirectToAction("Index");
             }
             return View(item);

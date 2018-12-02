@@ -9,7 +9,7 @@ namespace Swfast.Data
 {
     public class SwfastContext : DbContext
     {
-        public SwfastContext(DbContextOptions<SwfastContext> options) : base(options)
+        public SwfastContext(DbContextOptions options) : base(options)
         {
         }
 

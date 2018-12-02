@@ -14,10 +14,16 @@ namespace Swfast.Web
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+            UnityConfig.RegisterComponents();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+        }
+
+        private static void CreateSuperUser()
+        {
+            //UserManager userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
         }
     }
 }

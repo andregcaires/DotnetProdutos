@@ -29,15 +29,15 @@ namespace Swfast.Web.Areas.Api.Controllers
 
         // GET: api/Categoria/5
         [ResponseType(typeof(Categoria))]
-        public IHttpActionResult Get(int id)
+        public Categoria Get(int id)
         {
             Categoria item = _repo.GetById(id);
             if (item == null)
             {
-                return NotFound();
+                return null;// NotFound();
             }
 
-            return Ok(item);
+            return item; // Ok(item);
         }
 
         // POST: api/Categoria
@@ -55,20 +55,20 @@ namespace Swfast.Web.Areas.Api.Controllers
         }
 
         // PUT: api/Categoria/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutCategoria(int id, Categoria categoria)
+        [ResponseType(typeof(IHttpActionResult))]
+        public IHttpActionResult Put(int id, Categoria item)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != categoria.Id)
+            if (id != item.Id)
             {
                 return BadRequest();
             }
 
-            _repo.Update(categoria);
+            _repo.Update(item);
 
 
             if (_repo.GetById(id) == null)
@@ -76,7 +76,7 @@ namespace Swfast.Web.Areas.Api.Controllers
                 return NotFound();
             }
 
-            return StatusCode(HttpStatusCode.NoContent);
+            return Ok(item);
         }
 
         // DELETE: api/Categoria/5

@@ -268,6 +268,8 @@
     <Compile Include="Areas\Api\Controllers\CategoriaController.cs" />
     <Compile Include="Areas\Api\Controllers\ProdutoController.cs" />
     <Compile Include="Areas\Api\Interfaces\ICategoriaController.cs" />
+    <Compile Include="Areas\Api\Interfaces\IProdutoController.cs" />
+    <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -359,6 +361,11 @@
     <Content Include="Views\Categoria\Details.cshtml" />
     <Content Include="Views\Categoria\Delete.cshtml" />
     <Content Include="Views\Categoria\Create.cshtml" />
+    <Content Include="Views\Produto\Index.cshtml" />
+    <Content Include="Views\Produto\Edit.cshtml" />
+    <Content Include="Views\Produto\Details.cshtml" />
+    <Content Include="Views\Produto\Delete.cshtml" />
+    <Content Include="Views\Produto\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
