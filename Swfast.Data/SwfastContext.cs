@@ -13,6 +13,13 @@ namespace Swfast.Data
         {
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Categoria>().HasMany(p => p.Produtos).WithOne(e => e.Categoria);
+            modelBuilder.Entity<Produto>().HasOne(e => e.Categoria).WithMany(x => x.Produtos);
+        }
+
         public DbSet<Produto> Produto { get; set; }
 
         public DbSet<Categoria> Categoria  { get; set; }

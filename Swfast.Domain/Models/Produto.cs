@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Swfast.Domain.Models
@@ -12,7 +13,7 @@ namespace Swfast.Domain.Models
 
         [Required]
         public double Preco { get; set; }
-
+        
         public int CategoriaId { get; set; }
 
         public virtual Categoria Categoria { get; set; }

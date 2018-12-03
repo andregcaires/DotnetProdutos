@@ -11,6 +11,7 @@ using Swfast.Web.Areas.Api.Interfaces;
 
 namespace Swfast.Web.Controllers
 {
+    [Authorize(Users = "teste@swfast.com.br")]
     public class ProdutoController : Controller
     {
         private readonly IProdutoController apiController;
@@ -23,6 +24,7 @@ namespace Swfast.Web.Controllers
         }
 
         // GET: Produto
+        [AllowAnonymous]
         public ActionResult Index()
         {
             //return View(new Areas.Api.Controllers.ProdutoController().Get());

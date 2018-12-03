@@ -11,7 +11,7 @@ using Swfast.Web.Areas.Api.Interfaces;
 
 namespace Swfast.Web.Controllers
 {
-    [Authorize(Users ="")]
+    [Authorize(Users = "teste@swfast.com.br")]
     public class CategoriaController : Controller
     {
         private readonly ICategoriaController apiController;
